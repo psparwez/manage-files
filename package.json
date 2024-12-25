@@ -1,0 +1,82 @@
+{
+  "name": "manage-files",
+  "displayName": "Manage Files",
+  "description": "A simple VS Code extension for creating, deleting, and editing files or folders in the workspace.",
+  "version": "0.0.1",
+  "publisher": "psparwez",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createFileOrFolder",
+    "onCommand:extension.deleteFileOrFolder",
+    "onCommand:extension.editFile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createFileOrFolder",
+        "title": "Create File or Folder"
+      },
+      {
+        "command": "extension.renameFileOrFolder",
+        "title": "Rename File or Folder"
+      },
+      {
+        "command": "extension.deleteFileOrFolder",
+        "title": "Delete File or Folder"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.createFileOrFolder",
+        "key": "ctrl+shift+n",
+        "mac": "cmd+shift+n"
+      },
+      {
+        "command": "extension.renameFileOrFolder",
+        "key": "ctrl+shift+e",
+        "mac": "cmd+shift+e"
+      },
+      {
+        "command": "extension.deleteFileOrFolder",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psparwez/manage-files.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psparwez/manage-files/issues"
+  },
+  "homepage": "https://github.com/psparwez/manage-files#readme"
+}
