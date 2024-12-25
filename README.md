@@ -1,71 +1,105 @@
-# manage-files README
+<a id="top"></a>
 
-This is the README for your extension "manage-files". After writing up a brief description, we recommend including the following sections.
 
-## Features
+# <img width="25" src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="VS code icons" /> Manage Files Extension for VS Code 
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![Manage Files Extension](https://img.shields.io/badge/Manage%20Files%20Extension-%20-blue)
 
-For example if there is an image subfolder under your extension project workspace:
+This extension provides useful commands for managing files and folders in your workspace. You can create, rename, and delete files and folders easily. Additionally, it offers specific boilerplate code insertion for `.jsx` and `.tsx` files.
 
-\!\[feature X\]\(images/feature-x.png\)
+## 🚀 Features
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### 📂 Create File or Folder
 
-## Requirements
+Easily create new files or folders within your workspace with the following capabilities:
+- Choose between creating a **File** or **Folder**.
+- After creating a file, the extension will open it in the editor.
+- If the file extension is `.jsx` or `.tsx`, a boilerplate code will be added automatically.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+#### Commands:
+- **File**: Creates an empty file at your specified location.
+- **Folder**: Creates a new folder at your specified location.
 
-## Extension Settings
+### ✏️ Rename File or Folder
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Rename any file or folder in your workspace. The extension helps you quickly rename your items and updates their paths accordingly.
 
-For example:
+#### Features:
+- Allows you to choose any file or folder from the workspace.
+- You can provide a new name for the selected item.
 
-This extension contributes the following settings:
+#### Special Handling:
+- If a `.tsx` file is renamed to `.jsx`, or vice versa, the extension will remove the old boilerplate code and add the appropriate boilerplate code for the new file extension.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### 🗑️ Delete File or Folder
 
-## Known Issues
+Delete any file or folder from your workspace with a simple command. You will be asked for a confirmation before deletion to prevent accidental loss.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+#### Features:
+- Choose whether to delete a **File** or **Folder**.
+- Deletes the item after confirmation.
 
-## Release Notes
+### 📄 Automatic Boilerplate Code for `.jsx` and `.tsx`
 
-Users appreciate release notes as you update your extension.
+When you create a `.jsx` or `.tsx` file, the extension automatically adds a boilerplate code template based on the file type.
 
-### 1.0.0
+#### `.jsx` Boilerplate:
+```jsx
+const <fileName> = () => {
+  return (
+    <div><fileName></div>
+  );
+}
+export default <fileName>;
+```
 
-Initial release of ...
+#### `.tsx` Boilerplate:
+```tsx
+const <fileName>: React.FC = () => {
+  return (
+    <div><fileName></div>
+  );
+}
 
-### 1.0.1
+export default <fileName>;
+```
+The **`<fileName>`** will be replaced with the actual file name, making it easy to start building components quickly.
 
-Fixed issue #.
+## 🏗️ Development
+- Clone this repository.
+- Open the project folder in VS Code.
+- Press F5 to build and run the extension in a new VS Code window.
+- Test and make modifications as needed.
 
-### 1.1.0
 
-Added features X, Y, and Z.
+##  Usage
 
----
+### 🌀 Keybindings:
 
-## Following extension guidelines
+| Action                    | Windows/Linux Keybinding | Mac Keybinding  |
+|---------------------------|---------------------------|-----------------|
+| 📝 **Create File or Folder**  | `Ctrl+Shift+N`            | `Cmd+Shift+N`   |
+| 🔄 **Rename File or Folder**  | `Ctrl+Shift+R`            | `Cmd+Shift+R`   |
+| ❌ **Delete File or Folder**  | `Ctrl+Shift+D`            | `Cmd+Shift+D`   |
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### ⚙️ How to Use:
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+| Action                                           | Keybinding (Windows/Linux) | Keybinding (Mac) |
+|--------------------------------------------------|----------------------------|------------------|
+| 📝 **Create a file or folder**                   | `Ctrl+Shift+N`             | `Cmd+Shift+N`    |
+| 🔄 **Rename an existing file or folder**         | `Ctrl+Shift+R`             | `Cmd+Shift+R`    |
+| ❌ **Delete a file or folder**                   | `Ctrl+Shift+D`             | `Cmd+Shift+D`    |
 
-## Working with Markdown
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## 🐛 Issues / Bugs
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+If you encounter any bugs or issues while using the extension, please feel free to open an issue on the [GitHub repository](https://github.com/psparwez/manage-files/issues).
 
-## For more information
+## 🤝 Contributors
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+We welcome contributions to improve this extension! Whether you want to report a bug, suggest a feature, or submit a pull request, we appreciate your help.
 
-**Enjoy!**
+--- 
+<div align="right">
+<a href="#top" >🔝 Go to Top</a>
+</div>
